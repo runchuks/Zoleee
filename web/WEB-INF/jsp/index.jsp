@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <div class="kreisa-mala"></div>
         <div class="galds">
         <div class="player1">P1</div>
         <div class="player2">P2</div>
