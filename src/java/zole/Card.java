@@ -11,20 +11,23 @@ package zole;
  * @author Janis
  */
 public class Card {
-    String suit;
-    int number;
-    int value;
+    String suit; //masts
+    int number; //cipars
+    int value; //punkti
+    int status; // 0 - ir rokaas 1 - nokauta(mazajiem), 2- nokauta(liealajam)
     
     public Card(){
-        suit = " ";
+        suit = "";
         number = 0;
         value = 0;
+        status = 0;
     }
 
-    public Card(String suit, int number, int value) {
+    public Card(String suit, int number, int value, int status) {
         this.suit = suit;
         this.number = number;
         this.value = value;
+        this.status = status;
     }
 
     public String getSuit() {
