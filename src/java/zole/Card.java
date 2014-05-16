@@ -11,5 +11,5 @@ package zole;
  * @author Janis
  */
 public class Card {
-    
+    int value;
 }
