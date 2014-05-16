@@ -6,6 +6,8 @@
 
 package zole;
 
+import java.util.Random;
+
 /**
  *
  * @author Krumons
@@ -49,8 +51,17 @@ public class Deck {
         cards[24] = new Card("Spades", "Nine", 0, 0, 0); // Pika Devini
         cards[25] = new Card("Hearts", "Nine", 0, 0, 0); // Ercena Devini        
     }
+        void shuffle(){
+		Random rgen = new Random();  // Random number generator			
+ 
+		for (int i=0; i<cards.length; i++) {
+		    int randomPosition = rgen.nextInt(cards.length);
+		    Card temp = cards[i];
+		    cards[i] = cards[randomPosition];
+		    cards[randomPosition] = temp;
+		}		
+	}
     
-    
-}
+};
 
 
