@@ -1,0 +1,33 @@
+.galds{
+    border: 1px solid black;
+    width: 800px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-image: url('files/images/background.jpg');
+    background-size: cover;*/
+    background-color: green;
+}
+
+
+.player1,
+.player2,
+.player-me{
+    width: 200px;
+    height: 200px;
+}
+.player1{
+    border: 1px solid green;
+    float: left;
+}
+.player2{
+    border: 1px solid blue;
+    float: right;
+    
+}
+.player-me{
+    border: 1px solid red;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 400px;
+}
