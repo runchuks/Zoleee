@@ -35,4 +35,5 @@
 .kreisa-mala{
     float: left;
     width:100px;
+    border: 1px solid red;
 }
