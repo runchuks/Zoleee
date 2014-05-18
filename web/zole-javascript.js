@@ -4,10 +4,15 @@
  * and open the template in the editor.
  */
 var username = "";
-function SetName(){
-    console.log("Izsauca");
-    username = document.getElementsById("username").value;
-    console.log(username);
+function GetName(){
+    console.log("Izsauc GetName()");
+    username = document.getElementById("username").value;
+    console.log("Ievaditais  vards " + username);
     //document.getElementById('player-me').innerHTML = username;
+}
+
+function SetName(){
+    console.log("Izsuaca SetName()");
+    document.getElementById('player-me').innerHTML = username;
 }
 
