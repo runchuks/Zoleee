@@ -12,7 +12,7 @@ function GetName(){
     console.log(window.username);
 }
 function SetName(){
-    username = "<?$_GET['username']?>";
+    username = "ffdgdfg";
     //console.log(window.username);
     //console.log("Izsuaca SetName()" + window.username);
     document.getElementById('player-me').innerHTML = username;

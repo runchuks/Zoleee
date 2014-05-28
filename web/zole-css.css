@@ -19,6 +19,7 @@
 .player1{
     border: 1px solid green;
     float: left;
+    background: sienna;
 }
 .player2{
     border: 1px solid blue;
@@ -40,9 +41,18 @@
 }
 
 .forma{
-    border: 1px solid red;
-    
+    width: 157px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
 }
-body{
-    border: 1px solid blue;
+.forma .formas-poga{
+    display: block;
+    float: right;
+}
+
+user{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    
 }
