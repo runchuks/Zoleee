@@ -11,20 +11,29 @@ package zole;
  * @author Janis
  */
 public class Card {
-    String suit;
-    int number;
-    int value;
+    String suit; //masts
+    String card;
+    int strength; //speks
+    int value; //punkti
+    int status;// 0 - nav nokauta 1 - nokauta(mazajiem), 2- nokauta(liealajam)
+    int owner;
     
     public Card(){
-        suit = " ";
-        number = 0;
+        suit = "";
+        strength = 0;
         value = 0;
+        status = 0;
+        card = "";
+        owner = 0;
     }
 
-    public Card(String suit, int number, int value) {
+    public Card(String suit, String card,  int strength, int value, int status, int owner) {
         this.suit = suit;
-        this.number = number;
+        this.card = card;
+        this.strength = strength;
         this.value = value;
+        this.status = status;
+        this.owner = owner;
     }
 
     public String getSuit() {
@@ -35,12 +44,20 @@ public class Card {
         this.suit = suit;
     }
 
-    public int getNumber() {
-        return number;
+    public String getCard() {
+        return card;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setCard(String card) {
+        this.card = card;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
     }
 
     public int getValue() {
@@ -50,4 +67,15 @@ public class Card {
     public void setValue(int value) {
         this.value = value;
     }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    
+
 }
