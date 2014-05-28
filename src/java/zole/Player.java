@@ -29,7 +29,6 @@ public class Player {
         hand = new Card[8];
         this.firstName = name;
         this.lastName = lastName;
-        this.hand = hand;
         this.handsPlayed = handsPlayed;
         this.points = 0;
         id = ++counter;
