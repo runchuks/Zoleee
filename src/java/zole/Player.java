@@ -13,4 +13,20 @@ package zole;
 public class Player {
     String name;
     String lastName;
+    Card hand[];
+    int handsPlayed;
+    int points;
+    int id = 0;
+    int counter = 1;
+
+    public Player(String name, String lastName, Card hand[], int handsPlayed) {
+        hand = new Card[8];
+        this.name = name;
+        this.lastName = lastName;
+        this.hand = hand;
+        this.handsPlayed = handsPlayed;
+        this.points = 0;
+        id = ++counter;
+    }
+    
 }

@@ -52,7 +52,7 @@ public class Deck {
         cards[25] = new Card("Hearts", "Nine", 0, 0, 0); // Ercena Devini        
     }
         void shuffle(){
-		Random rgen = new Random();  // Random number generator			
+		Random rgen = new Random();			
  
 		for (int i=0; i<cards.length; i++) {
 		    int randomPosition = rgen.nextInt(cards.length);

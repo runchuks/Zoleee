@@ -15,7 +15,8 @@ public class Card {
     String card;
     int strength; //speks
     int value; //punkti
-    int status; // 0 - nav nokauta 1 - nokauta(mazajiem), 2- nokauta(liealajam)
+    int status;// 0 - nav nokauta 1 - nokauta(mazajiem), 2- nokauta(liealajam)
+    int owner;
     
     public Card(){
         suit = "";
@@ -23,14 +24,16 @@ public class Card {
         value = 0;
         status = 0;
         card = "";
+        owner = 0;
     }
 
-    public Card(String suit, String card,  int strength, int value, int status) {
+    public Card(String suit, String card,  int strength, int value, int status, int owner) {
         this.suit = suit;
         this.card = card;
         this.strength = strength;
         this.value = value;
         this.status = status;
+        this.owner = owner;
     }
 
     public String getSuit() {
@@ -39,6 +42,14 @@ public class Card {
 
     public void setSuit(String suit) {
         this.suit = suit;
+    }
+
+    public String getCard() {
+        return card;
+    }
+
+    public void setCard(String card) {
+        this.card = card;
     }
 
     public int getStrength() {
@@ -65,12 +76,6 @@ public class Card {
         this.status = status;
     }
 
-    public String getCard() {
-        return card;
-    }
-
-    public void setCard(String card) {
-        this.card = card;
-    }
+    
 
 }
