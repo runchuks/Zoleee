@@ -76,6 +76,19 @@ public class Card {
         this.status = status;
     }
 
+    public int getOwner() {
+        return owner;
+    }
+
+    public void setOwner(int owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" + "suit=" + suit + ", card=" + card + ", status=" + status + ", owner=" + owner + '}';
+    }
+
     
 
 }
