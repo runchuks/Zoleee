@@ -19,14 +19,22 @@ public class Player {
     int id = 0;
     int counter = 1;
 
-    public Player(String name, String lastName, Card hand[], int handsPlayed) {
+    public Player(String name, String lastName, int handsPlayed) {
         hand = new Card[8];
         this.name = name;
         this.lastName = lastName;
-        this.hand = hand;
         this.handsPlayed = handsPlayed;
         this.points = 0;
         id = ++counter;
     }
+
+    public Card[] getHand() {
+        return hand;
+    }
+
+    public void setHand(Card[] hand) {
+        this.hand = hand;
+    }
+    
     
 }
