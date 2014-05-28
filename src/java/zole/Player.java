@@ -11,5 +11,6 @@ package zole;
  * @author Krumons
  */
 public class Player {
-    
+    String name;
+    String lastName;
 }
