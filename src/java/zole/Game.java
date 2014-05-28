@@ -74,7 +74,48 @@ public class Game {
                 }
             
     }
-     
+    
+    static Card firstMove(Player player, Card card){
+        /*Speletajs ar pirmo gajienu liek karti TODO*/ 
+        return card;
+    }
+    
+    static Card move(Player player, Card firstCard){ // parbaude speletaja gajienam
+        boolean isValidMove = false;
+        boolean hasCard = false;
+        Card card = new Card();
+        
+        do {
+            card = player.hand[0];// speletaja izveleta karts TODO
+            if(firstCard.getStrength()>0){ // ja pirma karts trumpa
+                for (int i=0; i<8; i++){ 
+                    if(player.hand[i].getStrength()>0 && player.hand[i].getStatus() == 0){ //parbauda vai speletajam ir trupas
+                        hasCard = true;
+                    }          
+                }
+                if (hasCard == true && card.getStrength()>0){ // ja izveleta karts ir trumpa
+                    isValidMove = true;
+                }
+            }
+            
+            if(firstCard.getStrength() == 0){ // ja pirma karts nav trumpa
+                for (int i=0; i<8 ; i++){
+                    if(player.hand[i].getSuit() == firstCard.getSuit() && player.hand[i].getStatus() == 0){ //parbauda vai speletajam ir masts
+                        hasCard = true;
+                    }
+                }
+                if (hasCard == true && card.getSuit()==firstCard.getSuit() && card.getStrength() == 0){ // ja izveletas karts masts sakrit un ta nav trumpa
+                    isValidMove = true;
+                }
+            }
+            
+            if(!hasCard){ // ja nav karts, tad var likt jebkuru
+                isValidMove = true;
+            }
+            
+        }while(isValidMove);
+        return card;
+    }
         
     
     public void GameOn(){
