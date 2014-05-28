@@ -15,7 +15,8 @@
     <body>
         <div class="forma">
         <form name="varda-inputs" action="game-room.html" method="post">
-            <user> Username </user> <input type="text" name="username" id="username">
+            <user> Firstname </user> <input type="text" name="firstname" id="firstname">
+            <user> Lastname </user> <input type="text" name="lastname" id="lastname">
             <input type="submit" value="Sākt spēli" class="formas-poga">
         </form>
         </div>
