@@ -30,10 +30,19 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 400px;
+    background: silver;
 }
 
 .kreisa-mala{
     float: left;
     width:100px;
     border: 1px solid red;
+}
+
+.forma{
+    border: 1px solid red;
+    
+}
+body{
+    border: 1px solid blue;
 }

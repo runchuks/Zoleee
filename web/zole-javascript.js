@@ -3,16 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var username = "";
+var username = ".nnnnn";
 function GetName(){
     console.log("Izsauc GetName()");
-    username = document.getElementById("username").value;
-    console.log("Ievaditais  vards " + username);
+    window.username = document.getElementById("username").value;
+    console.log("Ievaditais  vards " + window.username);
     //document.getElementById('player-me').innerHTML = username;
+    console.log(window.username);
 }
-
 function SetName(){
-    console.log("Izsuaca SetName()");
+    username = "<?$_GET['username']?>";
+    //console.log(window.username);
+    //console.log("Izsuaca SetName()" + window.username);
     document.getElementById('player-me').innerHTML = username;
 }
 
