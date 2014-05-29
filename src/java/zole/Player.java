@@ -25,14 +25,14 @@ public class Player {
     int counter = 1;
     
     
-    public Player(String name, String lastName, Card hand[], int handsPlayed) {
-        hand = new Card[8];
-        this.firstName = name;
-        this.lastName = lastName;
-        this.handsPlayed = handsPlayed;
-        this.points = 0;
-        id = ++counter;
-    }   
+//    public Player(String name, String lastName, Card hand[], int handsPlayed) {
+//        hand = new Card[8];
+//        this.firstName = name;
+//        this.lastName = lastName;
+//        this.handsPlayed = handsPlayed;
+//        this.points = 0;
+//        id = ++counter;
+//    }   
     
     public Player (String firstName, String lastName, int points){
         this.firstName = firstName;

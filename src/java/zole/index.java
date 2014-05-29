@@ -39,14 +39,15 @@ public class index extends HttpServlet {
      */    
     
     Player p = null;
+    String url = "jdbc:mysql://localhost/zole_db";
+    String user = "root";
+    String pass = "";
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException, ClassNotFoundException {
+            throws ServletException, IOException, SQLException, ClassNotFoundException, PlayerException {
         Connection con = null;
         try {
-			String url = "jdbc:mysql://localhost/zole_db";
-			String user = "root";
-			String pass = "";
+			
 			
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(url, user, pass);
@@ -85,6 +86,7 @@ public class index extends HttpServlet {
             out.println("<div class=\"player1\">P1</div>");
             out.println("<div class=\"player2\">P2</div>");
             out.println("<div class=\"player-me\">"+ p.getFirstName() + " " + p.getLastName() + "points: " + p.getPoints() + "</div>");
+            //out.println("<div class=\"player-me\">"+ first + " " + last + "</div>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -108,6 +110,8 @@ public class index extends HttpServlet {
             Logger.getLogger(index.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(index.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (PlayerException ex) {
+            Logger.getLogger(index.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -127,6 +131,8 @@ public class index extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(index.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
+            Logger.getLogger(index.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (PlayerException ex) {
             Logger.getLogger(index.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
