@@ -39,9 +39,9 @@ public class index extends HttpServlet {
      */    
     
     Player p = null;
-    String url = "jdbc:mysql://localhost/zole_db";
+    String url = "jdbc:mysql://localhost/activity";
     String user = "root";
-    String pass = "";
+    String pass = "abcd1234";
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException, PlayerException {

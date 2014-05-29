@@ -115,20 +115,5 @@ public class Game {
             
         }while(isValidMove);
         return card;
-    }
-        
-    
-    public void GameOn(){
-
-        while(true){
-        Game game = new Game();
-        game.deal();
-        
-        
-        game.endHand();
-        }
-        
-    }
-    
-    
+    }    
 }
