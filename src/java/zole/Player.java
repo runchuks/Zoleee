@@ -34,4 +34,20 @@ public class Player {
         id = ++counter;
     }   
     
+    public Player (String firstName, String lastName, int points){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.points = points;
+    }
+    
+    public String getFirstName(){
+        return this.firstName;
+    }
+    public String getLastName(){
+        return this.lastName;
+    }
+    public int getPoints(){
+        return this.points;
+    }
+    
 }

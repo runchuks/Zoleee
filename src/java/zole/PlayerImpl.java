@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,6 +8,9 @@
 package zole;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -20,11 +24,17 @@ public class PlayerImpl {
         zoleDB = conn;
     }
     
-    public Player findPlayer (String firstName, String lastName){
+    public Player findPlayer (String firstName, String lastName) throws SQLException{
         Player plyr = null;
-        
-        
-        
+	PreparedStatement preStmt = zoleDB.prepareStatement("SELECT * FROM `players`"
+							+ "WHERE first_name = ? AND last_name = ? ");
+			preStmt.setString(1, firstName);
+			preStmt.setString(2, lastName);
+			ResultSet rs = preStmt.executeQuery();
+                        
+                        while (rs.next()) {
+				plyr = new Player(rs.getString(2),rs.getString(3),rs.getInt(4));
+                        }
         return plyr;
     }
     

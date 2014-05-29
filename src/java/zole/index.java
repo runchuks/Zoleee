@@ -8,6 +8,11 @@ package zole;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,12 +34,38 @@ public class index extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
-     */
+     * @throws java.sql.SQLException
+     * @throws java.lang.ClassNotFoundException
+     */    
+    
+    Player p = null;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
+        Connection con = null;
+        try {
+			String url = "jdbc:mysql://localhost/zole_db";
+			String user = "root";
+			String pass = "";
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection(url, user, pass);
+			//System.out.println("Connection successfully established! \n");
+			
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+        
+        
         response.setContentType("text/html;charset=UTF-8");
         String first = request.getParameter("firstname");
         String last = request.getParameter("lastname");
+        //Class.forName("com.mysql.jdbc.Driver");
+        //Connection con = DriverManager.getConnection(url, user, pass);
+        
+        PlayerImpl player = new PlayerImpl(con);
+        p = player.findPlayer(first, last);
+        
         
         try (PrintWriter out = response.getWriter()) {
             
@@ -53,7 +84,7 @@ public class index extends HttpServlet {
             out.println("<div class=\"galds\">");
             out.println("<div class=\"player1\">P1</div>");
             out.println("<div class=\"player2\">P2</div>");
-            out.println("<div class=\"player-me\">"+ first + " " + last + "</div>");
+            out.println("<div class=\"player-me\">"+ p.getFirstName() + " " + p.getLastName() + "points: " + p.getPoints() + "</div>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -71,7 +102,13 @@ public class index extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(index.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(index.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -85,7 +122,13 @@ public class index extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(index.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(index.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
