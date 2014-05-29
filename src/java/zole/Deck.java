@@ -54,14 +54,13 @@ public class Deck {
         void shuffle(){
 		Random rgen = new Random();			
  
-		for (int i=0; i<cards.length; i++) {
-		    int randomPosition = rgen.nextInt(cards.length);
+		for (int i=0; i<26; i++) {
+		    int randomPosition = rgen.nextInt(26);
 		    Card temp = cards[i];
 		    cards[i] = cards[randomPosition];
 		    cards[randomPosition] = temp;
 		}		
-	}
-    
+	}    
 };
 
 
