@@ -6,6 +6,12 @@
 
 package zole;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
 /**
  *
  * @author Janis
@@ -17,6 +23,8 @@ public class Card {
     int value; //punkti
     int status;// 0 - nav nokauta 1 - nokauta(mazajiem), 2- nokauta(liealajam)
     int owner;
+    String picture;
+    Image image;
     
     public Card(){
         suit = "";
@@ -27,13 +35,14 @@ public class Card {
         owner = 0;
     }
 
-    public Card(String suit, String card,  int strength, int value, int status, int owner) {
+    public Card(String suit, String card,  int strength, int value, int status, int owner, String picture) {
         this.suit = suit;
         this.card = card;
         this.strength = strength;
         this.value = value;
         this.status = status;
         this.owner = owner;
+        this.picture = picture;        
     }
 
     public String getSuit() {
@@ -87,6 +96,17 @@ public class Card {
     @Override
     public String toString() {
         return "Card{" + "suit=" + suit + ", card=" + card + ", status=" + status + ", owner=" + owner + '}';
+    }
+    
+    public BufferedImage returnImage(){
+        BufferedImage img = null;
+        try{
+            img = ImageIO.read(new File("src/resources" + this.picture));
+        } catch (IOException e){
+            
+        }
+        
+        return img;
     }
 
     

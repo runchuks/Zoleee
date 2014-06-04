@@ -49,5 +49,9 @@ public class Player {
     public int getPoints(){
         return this.points;
     }
+
+    public void setHand(Card[] hand) {
+        this.hand = hand;
+    }
     
 }
